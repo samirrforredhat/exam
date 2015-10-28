@@ -1,0 +1,13 @@
+Clustering-k means
+Aim:
+To partition a dataset in python using sklearn package-k means.
+Program:
+fromsklearn import datasets, cluster
+importnumpy as np
+iris=datasets.load_iris()
+iris.data.shape
+np.unique(iris.target)
+k_means=cluster.KMeans(n_clusters=3)
+k_means.fit(iris.data)
+print (k_means.labels_[::10])
+print (iris.target[::10])

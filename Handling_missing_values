@@ -1,0 +1,24 @@
+Handling Missing Values
+Aim:
+To handle missing values using pandas package in python.
+Program:
+import pandas as pd
+importnumpy as np
+from pandas import DataFrame, Series
+df=DataFrame({'int_col' :[1,2,6,8,-1], 'float_col' :[0.1,0.2,0.2,10.1,None],'str_col':['a','b',None,'c','a']})
+df
+df.dropna()
+df3=df.copy()
+mean=df3['float_col'].mean()
+print df3
+df3['float_col'].fillna(mean)
+df.ix[:,['int_col','float_col']].apply(np.sqrt)
+grouped=df['float_col'].groupby(df['str_col'])
+grouped.mean()
+df
+other=DataFrame({'str_col' : ['a','b'],'some_val' : [1,2]})
+other
+printpd.merge(df,other,on='str_col',how='inner')
+printpd.merge(df,other,on='str_col',how='outer')
+printpd.merge(df,other,on='str_col',how='left')
+printpd.merge(df,other,on='str_col',how='right')

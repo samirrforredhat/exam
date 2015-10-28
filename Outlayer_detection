@@ -1,0 +1,31 @@
+Outlier Reduction
+Aim:
+To perform outlier reduction in python using pandas package.
+Program:
+import pandas as pd
+importnumpy as np
+s=[12,14,15,17,20,23,25,250]
+df=pd.DataFrame(s)
+#assign name to the column
+df.columns=['values']
+df
+#givedescirbtion about values
+df.describe()
+#add new column 'x-mean' which has difference
+#between each value and ant its mean value
+df['x-mean']=df['values']-df['values'].mean()
+#print mean of df
+df.mean()
+#add new column '1.96std' which has the value
+#of 1.96 time of every value in column 'values'
+df['1.96std']=1.96*df['values'].std()
+df['1.96std']
+#add new column outlier which stores the boolean value
+#base on the condition 'x-mean' > '1.96std'?True:False
+df['outlier']=df['x-mean']>df['1.96std']
+df['outlier']
+#create new DataFrame 'df_new'
+#filter the outlier and store it to 'df_new'
+df_new=df[df['outlier']==False]
+#now you can see the removed outlier
+df_new
