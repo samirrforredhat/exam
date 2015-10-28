@@ -1,0 +1,51 @@
+#multilevel inheritance in python
+
+class Student(object):
+	def __init__(self,name,dept):
+		self.name=name
+		self.dept=dept
+
+class Mark():
+	def __init__(self,java,python):
+		self.java=java
+		self.python=python
+
+class Sports():
+	def __init__(self,sports):
+		self.sports=sports
+
+class Result(Student, Mark, Sports):
+	
+	def __init__(self, name, dept, java, python, sports):
+		self.name=name
+		self.dept=dept
+		self.java=java
+		self.python=python
+		self.sports=sports
+	def getTotal(self):
+		self.total=self.java+self.python+self.sports
+		return self.total
+	
+	def getResult(self):
+		if self.java>=35 and self.python>=35 and self.sports>=35:
+			self.result="PASS"
+		else:
+			self.result="FAIL"
+		return self.result
+
+
+name=raw_input("Enter student name : ")
+
+dept=raw_input("Enter deptartment :")
+
+java=int(raw_input("Enter java mark : "))
+
+python=int(raw_input("Enter python mark :"))
+
+spmark=int(raw_input("Enter sports mark : "))
+
+obj=Result(name,dept,java,python,spmark)
+
+print "Student Total Mark : ", obj.getTotal()
+
+print "Student Result : ", obj.getResult()

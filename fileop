@@ -1,0 +1,35 @@
+#file program
+
+#file operations in python
+
+import sys
+import os
+
+fname=raw_input("Enter file name : ")
+
+fpt=open(fname,'a')
+
+print "File created successfully"
+
+content=raw_input("Enter any string to insert :")
+
+fpt.write(content)
+
+print "new content writed successfully"
+
+print "Read from file... "
+
+fpt.close()
+
+fpt=open(fname,'r')
+
+print fpt.read()
+
+print "File properties ...."
+
+print "File name : ",fpt.name
+
+print "File size : " ,os.stat(fname).st_size
+
+print "File pointer position : ",fpt.tell()
+

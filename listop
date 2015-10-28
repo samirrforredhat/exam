@@ -1,0 +1,41 @@
+#List program
+
+#list operations in python
+
+#creating empty list
+student=[]
+
+size=int(raw_input("Enter list size : "))
+
+for i in range(0,size):
+	name=raw_input("Enter student name :")
+	student.append(name)
+
+print "Student list is : ", student
+
+print "First name : ",student[0]
+
+print "Last name : ",student[len(student)-1]
+
+print "List size : ",len(student)
+
+student.reverse()
+
+print "List in reverse order ",student
+
+student.sort()
+
+print "List in sorted order : ",student
+
+new_student=raw_input("Enter new student : ")
+
+student.insert(1,new_student)
+
+student.pop()
+
+print "New student inserted in first place and last student deleted"
+
+print student
+
+print "print odd index values : ",student[::2] 
+

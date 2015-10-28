@@ -1,0 +1,38 @@
+Exception handling :
+
+#exception handling in java
+
+import sys
+
+try:
+	
+	num1=int(raw_input("Enter number1 : "))
+	
+	num2=int(raw_input("Enter number2 : "))
+	
+	num3=num1/num2
+	
+	student=['ganesh','prabha','pugazhenthi','madhan']
+	
+	print student[3]
+	
+	file_opener=open("new_file.txt")
+	#to avoid error make change in code type like ("new_file.txt",'w')
+except ValueError as ve:
+	print "Value Error ",ve
+	
+except ZeroDivisionError as ze:
+	print "Zero Division Error ",ze
+	
+except NameError as ne:
+	print "Name Error ",ne
+
+except IOError as ie:
+	print "IOError ",ie
+
+except IndexError as indexerror:
+	print "Index Error ",indexerror
+
+except Error as e:
+	print "Error ",e
+

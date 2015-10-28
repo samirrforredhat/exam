@@ -1,0 +1,26 @@
+#string operations in python
+
+college=raw_input("Enter college name : ")
+
+print "Length of str : ",len(college)
+
+print "No of words in college ", college.count(" ")+1
+
+print "College name in upper case : ",college.upper()
+
+print "College name in lower case : ",college.lower()
+
+print "First letter of the word in capital : ",college.title()
+
+print "Is college start with letter d ? : ",college.startswith('d')
+
+print "Is college ends with letter  ? :",college.endswith('e')
+
+print "Count the vowels in college name :"
+
+count=0
+
+for i in range(len(college)):
+	if college[i]=='a' or college[i]=='e' or college[i]=='i' or college[i]=='o' or college[i]=='u':
+		count+=1 
+print "no of vowels in college name : ", count

@@ -1,0 +1,48 @@
+#sqlite program
+
+#sqlite with python
+
+import sqlite3 as lite
+import sys
+
+con=lite.connect("student.db")
+
+print "Connected into student db successfully..."
+
+cur=con.cursor()
+
+#if table already exist the following line will delete it and create the same again
+
+cur.execute("drop table if exists mark")
+
+cur.execute("create table mark (name text, rollno int, java int, python int, total int)")
+
+print "Created mark table successfully..."
+
+name=raw_input("Enter student name  : ")
+
+rollno=raw_input("Enter rollno : ")
+
+java=raw_input("Enter java mark ")
+
+python=raw_input("Enter python mark ")
+
+insert_query="insert into mark (name,rollno,java,python) values ('"+name+"',"+rollno+","+java+","+python+")"
+
+cur.execute(insert_query)
+
+print "new student inserted successfully"
+
+cur.execute("update mark set total=java+python")
+
+print "total mark updated successfully"
+
+print "select students from mark table "
+
+cur.execute("select * from mark ")
+
+rows=cur.fetchall()
+
+for row in rows:
+	print "insid rows"
+	print row
